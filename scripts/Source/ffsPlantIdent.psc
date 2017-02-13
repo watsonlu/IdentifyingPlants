@@ -1,4 +1,4 @@
-Scriptname ffsPlantIdent extends ReferenceAlias  
+Scriptname ffsPlantIdent extends ReferenceAlias
 
 int isFlora = 0;
 
@@ -7,17 +7,17 @@ Event OnInit()
 EndEvent
 
 bool Function isFlora(ObjectReference flora)
-	return false
+	If flora.GetBaseObject() as Flora
+		return true
+	Else
+		return false
+	EndIf
 endFunction
 
 Event OnCrosshairRefChange(ObjectReference ref)
-;	If ref && ref as Flora
-;		Debug.Trace("Targeted a Flora")
-;              isFlora=1
-;   else
-;         Debug.Trace("Targetting nothing or a non-flora")
-;         isFlora=0
-;	EndIf
+	If isFlora(ref)
+		; not yet implemented
+	EndIf
 EndEvent
 
 
