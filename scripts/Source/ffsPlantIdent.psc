@@ -6,8 +6,8 @@ Event OnInit()
 	RegisterForCrosshairRef()
 EndEvent
 
-int Function SampleFunction(int a, int b)
-	return a
+bool Function isFlora(ObjectReference flora)
+	return false
 endFunction
 
 Event OnCrosshairRefChange(ObjectReference ref)
