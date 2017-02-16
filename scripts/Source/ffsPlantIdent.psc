@@ -6,8 +6,8 @@ Event OnInit()
 	RegisterForCrosshairRef()
 EndEvent
 
-bool Function isFlora(ObjectReference flora)
-	If flora.GetBaseObject() as Flora
+bool Function isFlora(ObjectReference ref)
+	If ref && ref.GetBaseObject() as Flora
 		return true
 	Else
 		return false
