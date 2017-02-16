@@ -1,5 +1,7 @@
 Scriptname ffsPlantIdent extends ReferenceAlias
 
+import ffsNameHandler
+
 int isFlora = 0;
 
 Event OnInit()
@@ -22,6 +24,11 @@ Event OnCrosshairRefChange(ObjectReference ref)
 	EndIf
 EndEvent
 
+Event OnPlayerLoadGame()
+
+
+EndEvent
+
 
 Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer)
       If (akBaseItem as Ingredient)
@@ -29,6 +36,7 @@ Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemRefere
          if (isFlora == 1)
              ;picked up Ingredient while looking at a flora
              Debug.Trace("Player harvested an Ingredient")
+             storeData(akBaseItem)
          EndIf
       EndIf
 EndEvent
