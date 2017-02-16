@@ -16,7 +16,9 @@ endFunction
 
 Event OnCrosshairRefChange(ObjectReference ref)
 	If isFlora(ref)
-		; not yet implemented
+		isFlora = 1
+	Else
+		isFlora = 0
 	EndIf
 EndEvent
 
@@ -26,7 +28,7 @@ Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemRefere
          ;Picked up an Ingredient
          if (isFlora == 1)
              ;picked up Ingredient while looking at a flora
-             ;Do the thing
+             Debug.Trace("Player harvested an Ingredient")
          EndIf
       EndIf
 EndEvent
