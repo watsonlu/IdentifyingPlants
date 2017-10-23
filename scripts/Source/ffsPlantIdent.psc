@@ -5,6 +5,7 @@ import ffsNameHandler
 FormList property AllFlora auto
 
 int isFlora = 0;
+String undiscoveredText = "Unknown Plant"
 
 Event OnInit()
 	RegisterForCrosshairRef()

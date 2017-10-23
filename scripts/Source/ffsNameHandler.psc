@@ -11,6 +11,15 @@ Function saveAllFlora(FormList allFlora) global
 	EndWhile
 EndFunction
 
+Function discoverNone(FormList allFlora, String undiscoveredText) global
+	Int index = allFlora.GetSize()
+	while index
+		index -= 1
+		Form flora = allFlora.GetAt(index) as Form
+		flora.SetName(undiscoveredText)
+	endWhile
+EndFunction
+
 Function updateDiscoveredFlora(FormList allFlora) global
 	Int index = allFlora.GetSize()
 	While index
@@ -33,6 +42,10 @@ endFunction
 
 Bool Function unidentifyFlora(Form plant) global
 	JFormDB.setFlt(plant, ".ffs.identified", 0)
+endFunction
+
+Bool Function indentifyAt(FormList allFlora, Int floraToIdentify) global
+	JFormDB.setFlt(plant, ".ffs.identified", 1)
 endFunction
 
 Bool Function identifyFlora(Form plant) global
