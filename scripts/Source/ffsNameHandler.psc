@@ -1,7 +1,5 @@
 Scriptname ffsNameHandler
 
-FormList property AllFlora auto
-
 ; todo: make a global namespace variable
 
 Function saveAllFlora(FormList allFlora) global

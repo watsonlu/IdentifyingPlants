@@ -2,6 +2,8 @@ Scriptname ffsPlantIdent extends ReferenceAlias
 
 import ffsNameHandler
 
+FormList property AllFlora auto
+
 int isFlora = 0;
 
 Event OnInit()
@@ -25,8 +27,8 @@ Event OnCrosshairRefChange(ObjectReference ref)
 EndEvent
 
 Event OnPlayerLoadGame()
-
-
+	saveAllFlora(allFlora)
+	updateDiscovered(allFlora)
 EndEvent
 
 
