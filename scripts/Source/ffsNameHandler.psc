@@ -9,7 +9,7 @@ Function saveAllFlora(FormList allFlora) global
 	While index
 		index -= 1
 		Form flora = allFlora.GetAt(index) as Form
-		JFormDb.setStr(flora, ".ffs.originalname", flora.GetName())
+		saveOriginalName(flora, flora.GetName())
 	EndWhile
 EndFunction
 
@@ -18,7 +18,7 @@ Function updateDiscoveredFlora(FormList allFlora) global
 	; This should loop through the list of flora, checking to see if they are identified, and if so, setting their name correctly
 EndFunction
 
-Function saveName(Form plant, String name) global
+Function saveOriginalName(Form plant, String name) global
 	JFormDB.setStr(plant, ".ffs.originalname", name)
 endFunction
 
