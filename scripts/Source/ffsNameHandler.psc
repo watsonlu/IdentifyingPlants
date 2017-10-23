@@ -5,9 +5,13 @@ FormList property AllFlora auto
 ; todo: make a global namespace variable
 
 Function saveAllFlora(FormList allFlora) global
-	; not yet implemented
-	; this functon should save all flora into jcontainers BEFORE the game is loaded
-	; it should essentially create a record of what the flora list looked like before I messed with it
+	Int index = allFlora.GetSize()
+	While index
+		index -= 1
+		Form flora = allFlora.GetAt(index) as Form
+		JFormDb.setStr(flora, ".ffs.originalname", flora.GetName())
+	EndWhile
+
 EndFunction
 
 Function updateDiscoveredFlora(FormList allFlora) global
