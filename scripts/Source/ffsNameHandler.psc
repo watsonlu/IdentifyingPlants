@@ -11,7 +11,6 @@ Function saveAllFlora(FormList allFlora) global
 		Form flora = allFlora.GetAt(index) as Form
 		JFormDb.setStr(flora, ".ffs.originalname", flora.GetName())
 	EndWhile
-
 EndFunction
 
 Function updateDiscoveredFlora(FormList allFlora) global
