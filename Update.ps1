@@ -1,1 +1,0 @@
-ROBOCOPY "../Data" "." "ffs*" /s
